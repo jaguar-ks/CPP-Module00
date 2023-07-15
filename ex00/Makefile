@@ -6,7 +6,7 @@
 #    By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/14 10:29:58 by faksouss          #+#    #+#              #
-#    Updated: 2023/07/15 16:52:54 by faksouss         ###   ########.fr        #
+#    Updated: 2023/07/15 16:55:19 by faksouss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = megaphone
 
-FLG = -Wall -Wextra -Werror -std=c++98
+FLG = -Wall -Wextra -Werror
 
 all : $(NAME)
 

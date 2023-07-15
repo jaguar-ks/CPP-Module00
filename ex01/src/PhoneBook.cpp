@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 07:50:32 by faksouss          #+#    #+#             */
-/*   Updated: 2023/07/15 12:39:45 by faksouss         ###   ########.fr       */
+/*   Updated: 2023/07/15 17:16:19 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,20 @@ std::string print_case(std::string str) {
 
 void    PhoneBook::search_contact(void) {
     unsigned i = -1;
-    std::string index;
+    std::string ind;
     std::cout << " -------------------------------------------" << std::endl;
     std::cout << "|     index|first name| last name|  nickname|" << std::endl;
     std::cout << " -------------------------------------------" << std::endl;
-    while (!contacts[++i].get_f_name().empty()) {
+    while (++i < 8 && contacts[i].get_f_name().length() > 0) {
         std::cout << "|         " << i << "|" << print_case(contacts[i].get_f_name()) << print_case(contacts[i].get_l_name()) << print_case(contacts[i].get_n_name()) << std::endl;
         std::cout << " -------------------------------------------" << std::endl;
     }
     std::cout << "Enter index : ";
-    if (getline(std::cin, index).eof())
+    if (getline(std::cin, ind).eof())
         exit(0);
-    if (index.empty())
+    if (ind.empty())
         return ;
-    (index.length() == 1) ? i = index[0] - '0' : i = -1;
+    (ind.length() == 1) ? i = ind[0] - '0' : i = -1;
     if (i < 0 || i > 7) {
         std::cout << "Invalid index" << std::endl;
         return ;
