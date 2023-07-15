@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 07:50:32 by faksouss          #+#    #+#             */
-/*   Updated: 2023/07/15 12:02:43 by faksouss         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:39:45 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    PhoneBook::add_contact(void){
     std::string fn , ln , nn , pn , ds;
 
     std::cout << "Enter first name : ";
-    if (!getline(std::cin, fn))
+    if (getline(std::cin, fn).eof())
         exit(0);
     if (fn.empty()){
         std::cout << "First name can't be empty" << std::endl;
@@ -37,7 +37,7 @@ void    PhoneBook::add_contact(void){
     }
     contact.set_l_name(ln);
     std::cout << "Enter nickname : ";
-    if (!getline(std::cin, nn))
+    if (getline(std::cin, nn).eof())
         exit(0);
     if (nn.empty()){
         std::cout << "Nickname can't be empty" << std::endl;
@@ -45,7 +45,7 @@ void    PhoneBook::add_contact(void){
     }
     contact.set_n_name(nn);
     std::cout << "Enter phone number : ";
-    if (!getline(std::cin, pn))
+    if (getline(std::cin, pn).eof())
         exit(0);
     if (pn.empty()){
         std::cout << "Phone number can't be empty" << std::endl;
@@ -53,7 +53,7 @@ void    PhoneBook::add_contact(void){
     }
     contact.set_ph_n(pn);
     std::cout << "Enter darkest secret : ";
-    if (!getline(std::cin, ds))
+    if (getline(std::cin, ds).eof())
         exit(0);
     if (ds.empty()){
         std::cout << "Darkest secret can't be empty" << std::endl;

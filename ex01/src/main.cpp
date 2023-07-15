@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 15:24:08 by faksouss          #+#    #+#             */
-/*   Updated: 2023/07/15 11:26:57 by faksouss         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:40:12 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(){
     std::cout << "Welcome to My Awesome PhoneBook" << std::endl << "Please entre one of the following commands:" << std::endl << "ADD | SEARCH | EXIT" << std::endl;
     while (1){
         std::cout << "entre the command> ";
-        if (!std::getline(std::cin, cmd))
+        if (getline(std::cin, cmd).eof())
             return (0);
         if (cmd == "ADD")
             add_to_phonebook(&phonebook);

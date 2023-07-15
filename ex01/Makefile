@@ -6,7 +6,7 @@
 #    By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/15 08:06:40 by faksouss          #+#    #+#              #
-#    Updated: 2023/07/15 08:34:19 by faksouss         ###   ########.fr        #
+#    Updated: 2023/07/15 12:37:15 by faksouss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJS = $(patsubst %, $(OBJDIR)/%, $(SRC:.cpp=.o))
 
 HEADER = inc/Contact.hpp inc/PhoneBook.hpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
