@@ -6,40 +6,38 @@
 /*   By: faksouss <faksouss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 15:24:08 by faksouss          #+#    #+#             */
-/*   Updated: 2023/07/14 15:49:02 by faksouss         ###   ########.fr       */
+/*   Updated: 2023/07/15 11:26:57 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
 #include<string>
+#include<Contact.hpp>
+#include<PhoneBook.hpp>
 
-int    wich_case(std::string cmd){
-    if (!cmd.compare("ADD"))
-        return 0;
-    else if (!cmd.compare("SEARCH"))
-        return 1;
-    else if (!cmd.compare("EXIT"))
-        exit (0);
-    else
-        return -1;
+void    add_to_phonebook(PhoneBook *pb){
+    pb->add_contact();
+}
+
+void    search_contact(PhoneBook *pb){
+    pb->search_contact();
 }
 
 int main(){
     std::string cmd;
+    PhoneBook phonebook;
 
     std::cout << "Welcome to My Awesome PhoneBook" << std::endl << "Please entre one of the following commands:" << std::endl << "ADD | SEARCH | EXIT" << std::endl;
     while (1){
         std::cout << "entre the command> ";
-        std::getline(std::cin, cmd);
-        switch (wich_case(cmd)){
-            case 0:
-                //add to phone book
-                break ;
-            case 1:
-                //search the phone book
-                break ;
-            default:
-                std::cout << "Invalide command try [ADD | SEARCH | EXIT]" << std::endl;
-        }
+        if (!std::getline(std::cin, cmd))
+            return (0);
+        if (cmd == "ADD")
+            add_to_phonebook(&phonebook);
+        else if (cmd == "SEARCH")
+            search_contact(&phonebook);
+        else if (cmd == "EXIT")
+            exit (0);
+        std::cout << std::endl;
     }
 }
